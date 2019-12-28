@@ -1,0 +1,62 @@
+<mat-toolbar class="toolbar">
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon matSuffix>menu</mat-icon>
+    </button>
+  </div>
+  <span><img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"></span>
+  <span>
+    <p style="color: rgb(131, 125, 125)">Fundoo</p>
+  </span>
+  <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="40" fxFlex="60" class="search">
+
+    <button margin="14px" mat-icon-button fxHide.xs="true">
+      <mat-icon>search</mat-icon>
+    </button>
+    <input matTooltip="Search" placeholder="Search" class="input" [(ngModel)]="search" (keyup)="lookup()">
+    <button margin="14px" mat-icon-button fxHide.xs="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <span><button margin="14px" mat-icon-button fxHide.xs="true">
+      <i class="material-icons">
+        refresh
+      </i>
+    </button></span>
+  <button margin="14px" mat-icon-button fxHide.xs="true">
+    <mat-icon>dashboard</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list class="sidebarlist">
+      <mat-list-item><button mat-button class="nav-button">
+          <i class="material-icons" style="align-self:initial">
+            emoji_objects
+          </i>Notes</button>
+      </mat-list-item>
+      <mat-list-item><button mat-button class="nav-button"> <i class="material-icons">
+            notifications_none
+          </i>Reminders</button> </mat-list-item>
+      <mat-divider></mat-divider>
+      <h6 style="color: grey">LABELS</h6>
+      <mat-list-item><button mat-button class="nav-button"><i class="material-icons">
+            edit</i> Edit labels </button></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button class="nav-button">
+          <mat-icon matSuffix>archive</mat-icon> Archive
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button class="nav-button">
+          <mat-icon matSuffix>delete</mat-icon> Trash
+        </button>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+
+</mat-drawer-container>
