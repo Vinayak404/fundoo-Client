@@ -26,37 +26,77 @@
   <button margin="14px" mat-icon-button fxHide.xs="true">
     <mat-icon>dashboard</mat-icon>
   </button>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <div>
+      <img mat-card-avatar src="../../assets/images/doggy.jpg" class="profile1" /></div>
+  </button>
+  <div>
 
 
+    <mat-menu #menu="matMenu">
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
+        <mat-card style="overflow: hidden">
+          <div class="image-container" style="padding-top: 50%;">
+            <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}" (profilePic)="changeProfilePic()"
+              (click)="openSetProfileDialog()">
+          </div>
+          <div class="name">{{fname}}</div>
+          <div class="email">{{email}}</div>
+        </mat-card>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-around  center">
+        <button mat-raised-button (click)="logout()">Sign out</button>
+      </div>
+    </mat-menu>
+  </div>
 </mat-toolbar>
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <mat-list class="sidebarlist">
-      <mat-list-item><button mat-button class="nav-button">
-          <i class="material-icons" style="align-self:initial">
-            emoji_objects
-          </i>Notes</button>
-      </mat-list-item>
-      <mat-list-item><button mat-button class="nav-button"> <i class="material-icons">
-            notifications_none
-          </i>Reminders</button> </mat-list-item>
-      <mat-divider></mat-divider>
-      <h6 style="color: grey">LABELS</h6>
-      <mat-list-item><button mat-button class="nav-button"><i class="material-icons">
-            edit</i> Edit labels </button></mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>
-        <button mat-button class="nav-button">
-          <mat-icon matSuffix>archive</mat-icon> Archive
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button class="nav-button">
-          <mat-icon matSuffix>delete</mat-icon> Trash
-        </button>
-      </mat-list-item>
-    </mat-list>
+  <div>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-list class="sidebarlist">
+        <mat-list-item><button mat-button class="nav-button">
+            <i class="material-icons" style="align-self:initial">
+              emoji_objects
+            </i>Notes</button>
+        </mat-list-item>
+        <mat-list-item><button mat-button class="nav-button"> <i class="material-icons">
+              notifications_none
+            </i>Reminders</button> </mat-list-item>
+        <mat-divider></mat-divider>
+        <h6 style="color: grey">LABELS</h6>
+        <mat-list-item><button mat-button class="nav-button"><i class="material-icons">
+              edit</i> Edit labels </button></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <button mat-button class="nav-button">
+            <mat-icon matSuffix>archive</mat-icon> Archive
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button class="nav-button">
+            <mat-icon matSuffix>delete</mat-icon>Trash
+          </button>
+        </mat-list-item>
+      </mat-list>
 
-  </mat-drawer>
+    </mat-drawer>
+  </div>
+  <div>
+    <!-- <mat-card  class ="border">
+        <input placeholder="Take a note..." class="input" (click)=card.toggle()><i class="material-icons">
+            check_box
+            </i>
+
+        <i class="material-icons" style="margin-left:10px ">
+          brush
+          </i><i class="material-icons">
+              image
+              </i>
+
+      </mat-card> -->
+  </div>
+  <app-notes></app-notes>
 
 </mat-drawer-container>

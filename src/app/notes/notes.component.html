@@ -1,1 +1,26 @@
-<p>notes works!</p>
+<mat-card *ngIf='!card' class="border" (click)="cardSwap()">
+  <input placeholder="Take a note..." class="input"><i class="material-icons">
+    check_box
+  </i>
+
+  <i class="material-icons" style="margin-left:10px ">
+    brush
+  </i><i class="material-icons">
+    image
+  </i>
+
+</mat-card>
+
+<div class="div">
+  <mat-card *ngIf='card' class="border1">
+    <div>
+      <textarea matInput placeholder="Title" matTextareaAutosize class="input"></textarea>
+    </div>
+    <div>
+      <textarea matInput placeholder="Description" matTextareaAutosize class="input">
+
+      </textarea>
+    </div>
+    <app-icon></app-icon>
+  </mat-card>
+</div>

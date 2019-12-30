@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 import {
   MatCardModule,
@@ -22,7 +23,9 @@ import {
   MatListModule,
   MatSidenavModule,
   MatOptionModule,
-  MatSelectModule
+  MatSelectModule,
+  MatMenu,
+  MatMenuModule,
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
@@ -31,6 +34,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NotesComponent } from './notes/notes.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,8 @@ import { NotesComponent } from './notes/notes.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    NotesComponent
+    NotesComponent,
+    IconComponent
   ],
   imports: [
     MatSnackBarModule,MatSidenavModule,
@@ -56,7 +61,7 @@ import { NotesComponent } from './notes/notes.component';
     HttpClientModule,
     MatListModule,
     MatButtonToggleModule,
-    LayoutModule,MatOptionModule,MatSelectModule
+    LayoutModule,MatOptionModule,MatSelectModule,ClickOutsideModule,MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
