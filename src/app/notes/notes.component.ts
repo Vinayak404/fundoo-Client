@@ -10,6 +10,7 @@ export class NotesComponent implements OnInit {
   card = false;
 
   ngOnInit() {
+    
   }
   cardSwap() {
     this.card = !this.card;

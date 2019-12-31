@@ -23,4 +23,7 @@ export class UserServicesService {
     console.log(user, "reset services===");
     return this.http.post(`${this.UserUrl}resetPassword/${token}`, user)
   }
+  logout() {
+    return this.http.post(`${this.UserUrl}login`, {})
+  }
 }

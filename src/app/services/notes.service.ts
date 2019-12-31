@@ -8,9 +8,9 @@ export class NotesService {
 
   NotesUrl: String = "http://localhost:5000/notes/"
   constructor(private http: HttpClient) { }
-  getAllNotes(id) {
-    console.log(id, "notes services");
-    return this.http.get(this.NotesUrl + 'getNotes', id)
+  getAllNotes() {
+    console.log("notes services");
+    return this.http.get(this.NotesUrl + "getNotes")
   }
   addNote(note) {
     console.log(note, "notes ser===");

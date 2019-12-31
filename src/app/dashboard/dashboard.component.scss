@@ -77,16 +77,17 @@
   display: flex;
   align-items: center;
 }
-.border{
+
+.border {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 1px 1px 1px 1px  #cec9c9;
-  height:20px;
-  width :400px;
+  box-shadow: 1px 1px 1px 1px #cec9c9;
+  height: 20px;
+  width: 400px;
   top: 20px;
   position: relative;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -120,4 +121,25 @@
   height: 40px;
   width: 40px;
   border-radius: 40px;
+}
+
+.image-container {
+  position: relative;
+  left: 25%;
+}
+
+.topic-avatar {
+  width: 90px;
+  height: 90px;
+  align-self: center;
+  margin-top: -116px;
+  margin-left: -2px;
+}
+
+.name {
+  text-align: center;
+  padding-top: 9px;
+  font-size: x-large;
+  font-family: inherit;
+  padding-top: 1px;
 }

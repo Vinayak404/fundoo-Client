@@ -28,7 +28,7 @@
   </button>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <div>
-      <img mat-card-avatar src="../../assets/images/doggy.jpg" class="profile1" /></div>
+      <img mat-card-avatar src="{{pic}}" class="profile1" /></div>
   </button>
   <div>
 
@@ -37,17 +37,17 @@
       <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
         <mat-card style="overflow: hidden">
           <div class="image-container" style="padding-top: 50%;">
-            <img class="topic-avatar" mat-card-avatar src="{{ profilePicUser }}" (profilePic)="changeProfilePic()"
-              (click)="openSetProfileDialog()">
+            <img class="topic-avatar" mat-card-avatar src={{pic}}>
+
           </div>
-          <div class="name">{{fname}}</div>
-          <div class="email">{{email}}</div>
+          <div class="name">{{user.firstName+' '+user.lastName}}</div>
+          <div class="email">{{user.email}}</div>
         </mat-card>
       </div>
       <mat-divider></mat-divider>
 
       <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-around  center">
-        <button mat-raised-button (click)="logout()">Sign out</button>
+        <button style="left: 30%" mat-raised-button (click)="logout()">Sign out</button>
       </div>
     </mat-menu>
   </div>
@@ -84,19 +84,20 @@
     </mat-drawer>
   </div>
   <div>
-    <!-- <mat-card  class ="border">
+    <!-- <mat-card class ="border">
         <input placeholder="Take a note..." class="input" (click)=card.toggle()><i class="material-icons">
             check_box
             </i>
-
         <i class="material-icons" style="margin-left:10px ">
           brush
           </i><i class="material-icons">
               image
               </i>
-
       </mat-card> -->
   </div>
   <app-notes></app-notes>
+  <div *ngFor="let item of Notes; let i = index">
+    <app-note-card ></app-note-card>
 
+  </div>
 </mat-drawer-container>

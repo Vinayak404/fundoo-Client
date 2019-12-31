@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+
   login() {
     let user = {
       "email": this.email.value, "password": this.password.value
@@ -29,8 +29,9 @@ export class LoginComponent implements OnInit {
       console.log("HEre in Result", res);
       localStorage.setItem('token', res.token.token)
       localStorage.setItem('profilePic', res.user.imageURL)
-      console.log(localStorage.getItem('profilePic'))
-      
+      localStorage.setItem('user', JSON.stringify(res.user))
+      console.log(res.user.imageURL)
+
       this.router.navigateByUrl('/dashBoard')
     }, error => {
       this.snackbar.open("error", 'ok', { duration: 5000 })

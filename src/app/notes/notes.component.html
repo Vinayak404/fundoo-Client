@@ -1,14 +1,19 @@
-<mat-card *ngIf='!card' class="border" (click)="cardSwap()">
-  <input placeholder="Take a note..." class="input"><i class="material-icons">
-    check_box
-  </i>
-
-  <i class="material-icons" style="margin-left:10px ">
-    brush
-  </i><i class="material-icons">
-    image
-  </i>
-
+<mat-card *ngIf='!card' class="border">
+  <input placeholder="Take a note..." class="input" (click)="cardSwap()">
+  <div><button mat-button class="nav-button">
+      <i class="material-icons">
+        check_box
+      </i></button>
+  </div>
+  <div><button mat-button class="nav-button">
+      <i class="material-icons">
+        brush
+      </i></button>
+  </div>
+  <div><button mat-button class="nav-button"><i class="material-icons">
+        image
+      </i></button>
+  </div>
 </mat-card>
 
 <div class="div">
@@ -18,9 +23,13 @@
     </div>
     <div>
       <textarea matInput placeholder="Description" matTextareaAutosize class="input">
-
       </textarea>
     </div>
-    <app-icon></app-icon>
+    <div>
+      <app-icon></app-icon><button mat-button class="nav-button"                                                                                                                                                                                                                                                               (click)="cardSwap()">
+        Close</button>
+    </div>
   </mat-card>
+</div>
+<div>
 </div>
