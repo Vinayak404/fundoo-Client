@@ -1,12 +1,30 @@
+<!-- <div *ngFor="let note of notes">
 <mat-card class="border1">
   <div>
-    <textarea matInput matTextareaAutosize class="input" ng-model="title" required>
-
-      </textarea>
+    <mat-card matInput matTextareaAutosize class="input" ng-model="title" required>
+    </mat-card>
   </div>
   <div>
-    <textarea matInput matTextareaAutosize class="input" ng-model="description" required>
-      </textarea>
+    <mat-card matInput matTextareaAutosize class="input" ng-model="Take a note..." required>
+    </mat-card>
+    <app-icon></app-icon>
   </div>
-
 </mat-card>
+</div> -->
+
+<div *ngFor="let note of notes">
+  <mat-card class="border1">
+    <mat-card-header>
+      <mat-card-title>{{note.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      {{note.description}}
+    </mat-card-content>
+
+    <mat-card-actions>
+      <app-icon></app-icon>
+    </mat-card-actions>
+    
+  </mat-card>
+  </div>

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesService {
 
-  NotesUrl: String = "http://localhost:5000/notes/"
+  NotesUrl = environment.NotesUrl
   constructor(private http: HttpClient) { }
   getAllNotes() {
     console.log("notes services");

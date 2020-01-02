@@ -83,8 +83,8 @@
 
     </mat-drawer>
   </div>
-  <div>
-    <!-- <mat-card class ="border">
+  <!-- <div>
+     <mat-card class ="border">
         <input placeholder="Take a note..." class="input" (click)=card.toggle()><i class="material-icons">
             check_box
             </i>
@@ -93,11 +93,14 @@
           </i><i class="material-icons">
               image
               </i>
-      </mat-card> -->
+      </mat-card> 
   </div>
   <app-notes></app-notes>
   <div *ngFor="let item of Notes; let i = index">
     <app-note-card ></app-note-card>
 
-  </div>
+  </div> -->
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
 </mat-drawer-container>

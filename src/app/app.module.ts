@@ -36,6 +36,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NotesComponent } from './notes/notes.component';
 import { IconComponent } from './icon/icon.component';
 import { NoteCardComponent } from './note-card/note-card.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { NoteCardComponent } from './note-card/note-card.component';
     DashboardComponent,
     NotesComponent,
     IconComponent,
-    NoteCardComponent
+    NoteCardComponent,
+    MainComponent
   ],
   imports: [
     MatSnackBarModule,MatSidenavModule,
