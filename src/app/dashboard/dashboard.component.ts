@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserServicesService } from '../services/user-services.service';
 import { NotesService } from '../services/notes.service';
@@ -17,26 +17,30 @@ export class DashboardComponent implements OnInit {
   pic = localStorage.getItem('profilePic');
   user = JSON.parse(localStorage.getItem('user'));
   Notes: any;
+  @Input() options
   ngOnInit() {
-    this.getNotes()
+    // this.getNotes()
     console.log(this.user);
-    console.log(this.Notes);
+    // console.log(this.Notes);
 
   }
-  getNotes() {
-    this.notesService.getAllNotes().subscribe((res: any) => {
-      console.log(res.data);
-      this.Notes = res.data;
-    }, error => {
-      this.snackBar.open("register failed", "ok", { duration: 5000 });
+  // getNotes() {
+  //   this.notesService.getAllNotes().subscribe((res: any) => {
+  //     console.log(res.data);
+  //     this.Notes = res.data;
+  //   }, error => {
+  //     this.snackBar.open("register failed", "ok", { duration: 5000 });
 
-    })
-  }
+  //   })
+  // }
   logout() {
     this.userService.logout();
     localStorage.clear();
     console.log('User logged out')
     this.router.navigate(['/login']);
+  }
+  getArchivededNotes() {
+    
   }
 
 }

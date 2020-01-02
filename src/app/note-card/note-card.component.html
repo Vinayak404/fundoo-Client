@@ -5,26 +5,22 @@
     </mat-card>
   </div>
   <div>
-    <mat-card matInput matTextareaAutosize class="input" ng-model="Take a note..." required>
+    <mat-card p matTextareaAutosize class="input" ng-model="Take a note..." required>
     </mat-card>
     <app-icon></app-icon>
   </div>
 </mat-card>
 </div> -->
 
-<div *ngFor="let note of notes">
-  <mat-card class="border1">
-    <mat-card-header>
-      <mat-card-title>{{note.title}}</mat-card-title>
-    </mat-card-header>
-
-    <mat-card-content>
-      {{note.description}}
-    </mat-card-content>
-
+<div class="divClass">
+  <mat-card class="mat-card" *ngFor="let note of notes">
+    <div class="text_break">{{note.title}}
+    </div>
+    <div class="text_break">
+     {{note.description}}</div>
     <mat-card-actions>
-      <app-icon></app-icon>
+      <app-icon class="icons"></app-icon>
     </mat-card-actions>
-    
+
   </mat-card>
-  </div>
+</div>

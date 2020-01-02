@@ -1,5 +1,5 @@
 <mat-card *ngIf='!card' class="border">
-  <input placeholder="Take a note..." class="input" (click)="cardSwap()">
+  <input placeholder="Take a note..." class="input" (click)="cardSwap1()">
   <div><button mat-button class="nav-button">
       <i class="material-icons">
         check_box
@@ -18,17 +18,64 @@
 
 <div class="div">
   <mat-card *ngIf='card' class="border1">
-    <div>
-      <textarea matInput placeholder="Title" matTextareaAutosize class="input"></textarea>
-    </div>
-    <div>
-      <textarea matInput placeholder="Description" matTextareaAutosize class="input">
+    <form ngSubmit="submit">
+      <div>
+        <textarea matInput placeholder="Title" [formControl]="title" matTextareaAutosize class="input"></textarea>
+      </div>
+      <div>
+        <textarea matInput placeholder="Description" [formControl]="description" matTextareaAutosize class="input">
       </textarea>
-    </div>
-    <div>
-      <app-icon></app-icon><button mat-button class="nav-button"                                                                                                                                                                                                                                                               (click)="cardSwap()">
-        Close</button>
-    </div>
+      </div>
+      <div>
+
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            notifications_paused
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            person_add
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            color_lens
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            crop_original
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            archive
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="menu">
+          <i class="material-icons">
+            more_vert
+          </i>
+        </button>
+        <mat-menu #menu="matMenu" class="menuclass">
+          <mat-list-item><button mat-button>Add label</button></mat-list-item>
+          <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
+          <mat-list-item><button mat-button>Show checkboxes</button></mat-list-item>
+        </mat-menu>
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            undo
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true">
+          <i class="material-icons">
+            redo
+          </i>
+        </button><button mat-button class="nav-button" (click)="cardSwap()">
+          Close</button>
+      </div>
+    </form>
   </mat-card>
 </div>
 <div>

@@ -8,14 +8,39 @@
 
 }
 
-.border1 {
+.divClass {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex start;
+  margin-left: 15%;
+  margin-top: 3%;
+  left:50%;
+}
+
+.mat-card {
   background-color: white;
-  left: 30%;
+
+  /* left: 30%; */
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
-  width: 400px;
-  top: 20px;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
+  min-width: 260px;
+  margin-right: 1%;
+  max-width: 25%;
+  /* top: 20px; */
+  margin-bottom: 1%;
+}
+
+.text_break {
+  word-break: break-all;
+  padding: 5px;
+}
+
+.icons {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mat-card:hover .icons {
+  visibility: visible;
+  opacity: 1;
 }

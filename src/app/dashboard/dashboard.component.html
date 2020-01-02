@@ -6,7 +6,13 @@
   </div>
   <span><img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"></span>
   <span>
-    <p style="color: rgb(131, 125, 125)">Fundoo</p>
+    <p style="color:orangered">F</p>
+    <span><p style="color:royalblue">u</p>
+    <span></span><p style="color:rgb(212, 199, 75)">n</p>
+    <span></span><p style="color:rgb(175, 84, 187)">d</p>
+    <span></span><p style="color:rgb(235, 99, 140)">o</p>
+    <span></span><p style="color:rgb(134, 108, 19)">o</p>
+
   </span>
   <div fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="40" fxFlex="60" class="search">
 
@@ -70,7 +76,7 @@
               edit</i> Edit labels </button></mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-          <button mat-button class="nav-button">
+          <button mat-button class="nav-button" (click)="getArchivededNotes()">
             <mat-icon matSuffix>archive</mat-icon> Archive
           </button>
         </mat-list-item>
@@ -100,7 +106,7 @@
     <app-note-card ></app-note-card>
 
   </div> -->
-  <mat-drawer-content>
+  <div>
     <router-outlet></router-outlet>
-  </mat-drawer-content>
+  </div>
 </mat-drawer-container>

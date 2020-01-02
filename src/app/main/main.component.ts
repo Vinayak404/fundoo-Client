@@ -26,5 +26,7 @@ export class MainComponent implements OnInit {
 
     })
   }
-
+  receivednote($note) {
+    this.getNotes()
+  }
 }

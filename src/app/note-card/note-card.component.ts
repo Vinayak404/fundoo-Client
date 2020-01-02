@@ -6,10 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./note-card.component.scss']
 })
 export class NoteCardComponent implements OnInit {
-  @Input() notes: any;
+  noteType;
+  @Input() notes: any; NoteStatus: any; options: any;
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

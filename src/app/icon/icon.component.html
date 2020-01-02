@@ -1,40 +1,38 @@
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    notifications_paused
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    person_add
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    color_lens
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    crop_original
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    archive
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    more_vert
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    undo
-  </i>
-</button>
-<button margin="14px" mat-icon-button fxHide.xs="true">
-  <i class="material-icons">
-    redo
-  </i>
-</button>
+<div>
+  <button margin="14px" mat-icon-button fxHide.xs="true">
+    <i class="material-icons">
+      notifications_paused
+    </i>
+  </button>
+  <button margin="14px" mat-icon-button fxHide.xs="true">
+    <i class="material-icons">
+      person_add
+    </i>
+  </button>
+  <button margin="14px" mat-icon-button fxHide.xs="true">
+    <i class="material-icons">
+      color_lens
+    </i>
+  </button>
+  <button margin="14px" mat-icon-button fxHide.xs="true">
+    <i class="material-icons">
+      crop_original
+    </i>
+  </button>
+  <button margin="14px" mat-icon-button fxHide.xs="true">
+    <i class="material-icons">
+      archive
+    </i>
+  </button>
+  <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="menu">
+    <i class="material-icons">
+      more_vert
+    </i>
+  </button></div>
+<mat-menu #menu="matMenu" class="menuclass">
+  <mat-list-item><button mat-button>Delete note</button></mat-list-item>
+  <mat-list-item><button mat-button>Add label</button></mat-list-item>
+  <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
+  <mat-list-item><button mat-button>Make a copy</button></mat-list-item>
+  <mat-list-item><button mat-button>Show checkboxes</button></mat-list-item>
+</mat-menu>
