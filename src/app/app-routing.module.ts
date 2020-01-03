@@ -6,6 +6,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
+import { ArchivesComponent } from './archives/archives.component';
+import { TrashComponent } from './trash/trash.component';
 
 
 const routes: Routes = [{                                          // removed square bracket
@@ -18,16 +20,18 @@ const routes: Routes = [{                                          // removed sq
   path: 'login', component: LoginComponent
 }, { path: 'forgotPassword', component: ForgotPasswordComponent }, {
   path: 'resetPassword/:token', component: ResetPasswordComponent
-  }, {
-    path: 'dashBoard', component: DashboardComponent,
-    children: [{ path: 'main', component: MainComponent },
-    {                                          // removed square bracket
-      path: '',
-      redirectTo: 'main',
-      pathMatch: 'full'
-    }
-    ]
-  }];
+}, {
+  path: 'dashBoard', component: DashboardComponent,
+  children: [{ path: 'main', component: MainComponent },
+  { path: 'archiveNotes', component: ArchivesComponent },
+  { path: 'trashNotes', component: TrashComponent },
+  {                                          // removed square bracket
+    path: '',
+    redirectTo: 'main',
+    pathMatch: 'full'
+  }
+  ]
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

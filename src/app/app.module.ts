@@ -38,6 +38,8 @@ import { IconComponent } from './icon/icon.component';
 import { NoteCardComponent } from './note-card/note-card.component';
 import { MainComponent } from './main/main.component';
 import { EditNotesComponent } from './edit-notes/edit-notes.component';
+import { ArchivesComponent } from './archives/archives.component';
+import { TrashComponent } from './trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { EditNotesComponent } from './edit-notes/edit-notes.component';
     IconComponent,
     NoteCardComponent,
     MainComponent,
-    EditNotesComponent
+    EditNotesComponent,
+    ArchivesComponent,
+    TrashComponent
   ],
   imports: [
     MatSnackBarModule,MatSidenavModule,

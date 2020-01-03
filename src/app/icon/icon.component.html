@@ -19,7 +19,7 @@
       crop_original
     </i>
   </button>
-  <button margin="14px" mat-icon-button fxHide.xs="true">
+  <button margin="14px" mat-icon-button fxHide.xs="true" (click)="archive(noteId)">
     <i class="material-icons">
       archive
     </i>
@@ -30,7 +30,7 @@
     </i>
   </button></div>
 <mat-menu #menu="matMenu" class="menuclass">
-  <mat-list-item><button mat-button>Delete note</button></mat-list-item>
+  <mat-list-item><button mat-button (click)="delete(noteId)">Delete note</button></mat-list-item>
   <mat-list-item><button mat-button>Add label</button></mat-list-item>
   <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
   <mat-list-item><button mat-button>Make a copy</button></mat-list-item>

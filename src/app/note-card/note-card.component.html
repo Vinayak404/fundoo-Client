@@ -17,10 +17,9 @@
     <div class="text_break">{{note.title}}
     </div>
     <div class="text_break">
-     {{note.description}}</div>
+      {{note.description}}</div>
     <mat-card-actions>
-      <app-icon class="icons"></app-icon>
+      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)"></app-icon>
     </mat-card-actions>
-
   </mat-card>
 </div>

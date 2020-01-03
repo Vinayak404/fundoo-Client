@@ -17,4 +17,23 @@ export class NotesService {
     console.log(note, "notes ser===");
     return this.http.post(this.NotesUrl + 'addNote', note)
   }
+  getArchives() {
+    console.log("notesarchive serv");
+    return this.http.get(this.NotesUrl + "getArchives")
+  }
+  getTrash() {
+    console.log("Getting Trash!");
+    return this.http.get(this.NotesUrl + 'getTrash')
+  }
+  archiveNote(noteid) {
+    console.log("archiving...");
+    return this.http.put(this.NotesUrl + 'archive', noteid)
+  }
+  deleteNote(note) {
+    console.log("deleting...");
+    return this.http.put(this.NotesUrl + 'deleteNote', note)
+  }
+  unarchive(id) {
+    return this.http.put(this.NotesUrl + 'unArchive', id)
+  }
 }

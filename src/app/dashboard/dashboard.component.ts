@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserServicesService } from '../services/user-services.service';
 import { NotesService } from '../services/notes.service';
@@ -11,6 +11,8 @@ import { MatSnackBar } from '@angular/material';
 })
 export class DashboardComponent implements OnInit {
   note: any;
+  archiveNotes: any;
+  TrashNotes: any;
 
   constructor(private router: Router, private userService: UserServicesService,
     private snackBar: MatSnackBar, private notesService: NotesService) { }
@@ -19,28 +21,24 @@ export class DashboardComponent implements OnInit {
   Notes: any;
   @Input() options
   ngOnInit() {
-    // this.getNotes()
     console.log(this.user);
-    // console.log(this.Notes);
 
   }
-  // getNotes() {
-  //   this.notesService.getAllNotes().subscribe((res: any) => {
-  //     console.log(res.data);
-  //     this.Notes = res.data;
-  //   }, error => {
-  //     this.snackBar.open("register failed", "ok", { duration: 5000 });
 
-  //   })
-  // }
   logout() {
     this.userService.logout();
     localStorage.clear();
     console.log('User logged out')
     this.router.navigate(['/login']);
   }
+  getNotes() {
+    this.router.navigate(['/dashBoard/main'])
+  }
   getArchivededNotes() {
-    
+    this.router.navigate(['/dashBoard/archiveNotes'])
+  }
+  getTrash() {
+    this.router.navigate(['/dashBoard/trashNotes'])
   }
 
 }

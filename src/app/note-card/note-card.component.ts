@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -8,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NoteCardComponent implements OnInit {
   noteType;
   @Input() notes: any; NoteStatus: any; options: any;
+  @Output() archiveEvent = new EventEmitter
   constructor() { }
 
   ngOnInit() {
 
+  }
+  afterArchive($event) {
+    this.archiveEvent.emit('')
   }
 
 }
