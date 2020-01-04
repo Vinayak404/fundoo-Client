@@ -45,3 +45,42 @@
   visibility: visible;
   opacity: 1;
 }
+.secondcard {
+  margin-top: 2%;
+  width: 530px;
+  padding: 5px;
+  padding-left: 4px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgb(184, 181, 181);
+}
+
+.input {
+  margin-top: 10px;
+  width: 50%;
+  height: 23px;
+  font-size: large;
+  outline: none;
+  border: none;
+  white-space: initial;
+  width: 125px;
+  word-wrap: break-word;
+  padding-left: 9px;
+}
+
+.title {
+  margin-top: 10px;
+  height: 25px;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  width: 350px;
+  word-wrap: break-word;
+  padding-left: 9px;
+}
+
+.btnClose {
+  padding-left: 20px;
+  margin-left: 95px;
+}

@@ -13,11 +13,13 @@
 </div> -->
 
 <div class="divClass">
-  <mat-card class="mat-card" *ngFor="let note of notes">
-    <div class="text_break">{{note.title}}
+  <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.color">
+    <div (click)="dialog(note)">
+      <div class="text_break">{{note.title}}
+      </div>
+      <div class="text_break">
+        {{note.description}}</div>
     </div>
-    <div class="text_break">
-      {{note.description}}</div>
     <mat-card-actions>
       <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)"></app-icon>
     </mat-card-actions>

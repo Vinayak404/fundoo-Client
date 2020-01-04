@@ -1,0 +1,9 @@
+<div>
+  <input class="title" type="text" value="{{onenote.title}}" [(ngModel)]="onenote.title" #title>
+</div>
+<div style="margin-top:13px;">
+  <input class="title" type="text" type="text" value="{{onenote.description}}" [(ngModel)]="onenote.description"
+    #description>
+  <button mat-raised-button type="submit" class="btnClose"
+    (click)="save(onenote._id,title.value,description.value)">close </button>
+</div>

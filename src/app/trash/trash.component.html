@@ -1,1 +1,23 @@
-<app-note-card [notes]="trashNotes"></app-note-card>
+<div class="divClass">
+  <mat-card class="mat-card" *ngFor="let note of trashNotes" [style.backgroundColor]="note.color">
+    <div class="text_break">{{note.title}}
+    </div>
+    <div class="text_break">
+      {{note.description}}</div>
+    <mat-card-actions class="icons">
+      <div>
+
+        <button margin="14px" mat-icon-button fxHide.xs="true" (click)="unArchive(note._id)">
+          <i class="material-icons">
+            restore_from_trash
+          </i>
+        </button>
+        <button margin="14px" mat-icon-button fxHide.xs="true" (click)="deleteNoteForever(note._id)">
+          <i class="material-icons">
+            delete
+          </i>
+        </button></div>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

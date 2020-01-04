@@ -36,4 +36,14 @@ export class NotesService {
   unarchive(id) {
     return this.http.put(this.NotesUrl + 'unArchive', id)
   }
+  deleteNoteForever(Nid) {
+    console.log("HEREjfjf", Nid);
+    return this.http.delete(this.NotesUrl + 'deleteNoteForever', Nid)
+  }
+  color(ids) {
+    return this.http.put(this.NotesUrl + 'color', ids)
+  }
+  updateNote(det) {
+    return this.http.put(this.NotesUrl + 'editNote', det)
+  }
 }

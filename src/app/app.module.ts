@@ -26,6 +26,8 @@ import {
   MatSelectModule,
   MatMenu,
   MatMenuModule,
+  MatTooltipModule,
+  MatDialogModule,
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
@@ -37,9 +39,9 @@ import { NotesComponent } from './notes/notes.component';
 import { IconComponent } from './icon/icon.component';
 import { NoteCardComponent } from './note-card/note-card.component';
 import { MainComponent } from './main/main.component';
-import { EditNotesComponent } from './edit-notes/edit-notes.component';
 import { ArchivesComponent } from './archives/archives.component';
 import { TrashComponent } from './trash/trash.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
 @NgModule({
   declarations: [
@@ -53,12 +55,12 @@ import { TrashComponent } from './trash/trash.component';
     IconComponent,
     NoteCardComponent,
     MainComponent,
-    EditNotesComponent,
     ArchivesComponent,
-    TrashComponent
+    TrashComponent,
+    EditNoteComponent
   ],
   imports: [
-    MatSnackBarModule,MatSidenavModule,
+    MatSnackBarModule, MatSidenavModule,
     AppRoutingModule,
     MatCardModule,
     MatInputModule,
@@ -71,7 +73,11 @@ import { TrashComponent } from './trash/trash.component';
     HttpClientModule,
     MatListModule,
     MatButtonToggleModule,
-    LayoutModule,MatOptionModule,MatSelectModule,ClickOutsideModule,MatMenuModule
+    LayoutModule, MatOptionModule, MatSelectModule, ClickOutsideModule, MatMenuModule,
+    MatDialogModule, MatTooltipModule
+  ],
+  entryComponents: [
+    EditNoteComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

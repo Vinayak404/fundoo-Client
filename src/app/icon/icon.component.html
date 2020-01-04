@@ -9,11 +9,30 @@
       person_add
     </i>
   </button>
-  <button margin="14px" mat-icon-button fxHide.xs="true">
+  <!-- <button margin="14px" mat-icon-button fxHide.xs="true">
+    <i class="material-icons">
+      color_lens
+    </i>
+  </button> -->
+  <button mat-icon-button matTooltip="Change color" [matMenuTriggerFor]="colorlist">
     <i class="material-icons">
       color_lens
     </i>
   </button>
+
+  <mat-menu #colorlist="matMenu" [overlapTrigger]="false" style=" display : flex row wrap">
+    <ng-template matMenuContent>
+      <div>
+        <div fxLayout="row" fxLayoutGap="1px" style="margin-top: 1px" *ngFor="let colors of arrayOfColors">
+          <div *ngFor="let color of colors">
+            <button [ngStyle]="{ 'background-color': color.color }" (click)="setColor(noteId._id,(color.color))"
+              matTooltip="{{ color.name }}" mat-mini-fab></button>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </mat-menu>
   <button margin="14px" mat-icon-button fxHide.xs="true">
     <i class="material-icons">
       crop_original
@@ -28,7 +47,8 @@
     <i class="material-icons">
       more_vert
     </i>
-  </button></div>
+  </button>
+</div>
 <mat-menu #menu="matMenu" class="menuclass">
   <mat-list-item><button mat-button (click)="delete(noteId)">Delete note</button></mat-list-item>
   <mat-list-item><button mat-button>Add label</button></mat-list-item>

@@ -23,4 +23,16 @@ export class TrashComponent implements OnInit {
       console.log(error);
     })
   }
+  deleteNoteForever(Nid) {
+    let delId = { _id: Nid }
+    console.log("HEHRFGR", delId);
+
+    this.notesServices.deleteNoteForever(delId).subscribe((res: any) => {
+      console.log("deletESucesS", res);
+      this.getTrash()
+    }, error => {
+      this.snackBar.open("failed todelete", "ok", { duration: 5000 })
+      console.log(error);
+    })
+  }
 }
