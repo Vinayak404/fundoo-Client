@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', res.token.token)
       localStorage.setItem('profilePic', res.user.imageURL)
       localStorage.setItem('user', JSON.stringify(res.user))
-      console.log(res.user.imageURL)
 
       this.router.navigateByUrl('/dashBoard')
     }, error => {

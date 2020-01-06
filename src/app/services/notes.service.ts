@@ -46,4 +46,9 @@ export class NotesService {
   updateNote(det) {
     return this.http.put(this.NotesUrl + 'editNote', det)
   }
+  getCollabNotes() {
+    console.log('href collab');
+    
+    return this.http.get(this.NotesUrl + 'collaboratedNotes')
+  }
 }

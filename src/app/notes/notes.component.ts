@@ -1,4 +1,4 @@
-import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServicesService } from '../services/user-services.service';
@@ -36,7 +36,7 @@ export class NotesComponent implements OnInit {
       this.description.reset()
       this.snackBar.open("succesfully added note", "ok", { duration: 5000 })
       this.cardSwap1()
-      this.noteAdded.emit('true');
+      this.noteAdded.emit(note);
     }, error => {
       console.log("error", error);
       this.snackBar.open("failed to add note", "ok", { duration: 5000 })

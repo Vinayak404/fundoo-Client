@@ -48,7 +48,7 @@ export class IconComponent implements OnInit {
     this.noteService.color(colornote).subscribe((res: any) => {
       console.log('success color', res);
 
-      this.archiveEvent.emit('true')
+      this.archiveEvent.emit(colornote)
     }, error => {
       this.snackBar.open('faild color', 'ok', { duration: 5000 })
       console.log(error);

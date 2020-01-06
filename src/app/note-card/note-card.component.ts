@@ -17,7 +17,7 @@ export class NoteCardComponent implements OnInit {
 
   }
   afterArchive($event) {
-    this.archiveEvent.emit('')
+    this.archiveEvent.emit($event)
   }
   dialog(note) {
     console.log(note);
