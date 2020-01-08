@@ -42,6 +42,7 @@ import { MainComponent } from './main/main.component';
 import { ArchivesComponent } from './archives/archives.component';
 import { TrashComponent } from './trash/trash.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
+import { CollaboratorComponent } from './collaborator/collaborator.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { EditNoteComponent } from './edit-note/edit-note.component';
     MainComponent,
     ArchivesComponent,
     TrashComponent,
-    EditNoteComponent
+    EditNoteComponent,
+    CollaboratorComponent
   ],
   imports: [
     MatSnackBarModule, MatSidenavModule,
@@ -77,7 +79,7 @@ import { EditNoteComponent } from './edit-note/edit-note.component';
     MatDialogModule, MatTooltipModule
   ],
   entryComponents: [
-    EditNoteComponent
+    EditNoteComponent, CollaboratorComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,14 +30,21 @@ export class MainComponent implements OnInit {
   getCollabNotes() {
     this.notesService.getCollabNotes().subscribe((res: any) => {
       console.log("COLLab NoteS", res.data);
-      let CollNotes = []
-      let UserId = JSON.parse(localStorage.getItem('user'))._id
-      res.data.forEach((e) => {
-        if (e.collaboratorsId.includes(UserId)) {
-          CollNotes.push(e)
-        }
-      })
-      this.allNotes = this.allNotes.push(CollNotes);
+      // let CollNotes = []
+      // let Useremail = JSON.parse(localStorage.getItem('user')).email
+      // res.data.forEach((e) => {
+      //   if (e.collaboratorsId.includes(Useremail)) {
+      //     CollNotes.push(e)
+      //   }
+      // })
+      res.data.forEach(element => {
+
+        console.log("NOteID", element.noteId);
+
+        this.allNotes.push(element.noteId);
+        console.log("All NOtes Noe", this.allNotes);
+
+      });
     }, error => {
       console.log('Error in retreiving collab notes', error);
 

@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Options } from 'selenium-webdriver/chrome';
 import { NotesService } from '../services/notes.service';
 import { MatSnackBar } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icon',
@@ -12,9 +14,10 @@ import { MatSnackBar } from '@angular/material';
 export class IconComponent implements OnInit {
   @Input() noteId;
   @Output() archiveEvent = new EventEmitter
-  constructor(private noteService: NotesService, private snackBar: MatSnackBar) { }
+  constructor(private dialog: MatDialog, private noteService: NotesService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
+
   }
   archive(noteId) {
     let note = { id: noteId._id }
@@ -54,8 +57,14 @@ export class IconComponent implements OnInit {
       console.log(error);
     })
   }
-
-
+  CollabDialog() {
+    console.log("noTeIS ", this.noteId._id);
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+      width: '450px',
+      height: '250px',
+      data: { noteId: this.noteId._id }
+    });
+  }
 
   arrayOfColors = [
     [
@@ -74,6 +83,7 @@ export class IconComponent implements OnInit {
       { color: "rgb(209, 116, 116)", name: "pink" }
     ]
   ]
+
 
 
 }

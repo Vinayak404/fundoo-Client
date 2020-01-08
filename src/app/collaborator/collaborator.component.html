@@ -1,0 +1,51 @@
+<div class="dialogg">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <span style="font-size:large; font-family: inherit">Collaborators</span>
+  </div>
+  <mat-divider></mat-divider>
+  <div style="height:64px" fxLayout="row" fxLayoutAlign="start center">
+    <div>
+      <img mat-card-avatar src={{profilePic}} />
+    </div>
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap=6px>
+        <div>{{fname}}(owner)</div>
+      </div>
+      <div>{{email}}</div>
+    </div>
+  </div>
+  <div style="width: 82%" *ngFor="let item of people">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <!-- <div>
+        <button mat-mini-fab> {{ item._id.firstName| slice:0:1}}</button>
+      </div> -->
+      <div>
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap=6px style=" width: 300px;">
+          <div>{{item._id.firstName}}</div>
+          <div>{{item._id.lastName}}</div>
+        </div>
+        <div style="width: 75%;">{{item._id.email}}</div>
+      </div>
+      <div><button mat-icon-button>
+          <mat-icon (click)="removeColab(item._id.email)">clear</mat-icon>
+        </button></div>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayout="row" fxLayoutAlign="start center">
+    <div>
+      <mat-icon matPrefix style="margin-right:10px;">person_add</mat-icon>
+    </div>
+    <div><input class="input" matInput placeholder="enter the email to collaborate" [formControl]="collabMail" required>
+    </div>
+    <div>
+      <button mat-icon-button (click)="collabEmail()">
+        <mat-icon>done</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="colab" fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </div>
+</div>

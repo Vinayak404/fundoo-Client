@@ -7,3 +7,68 @@
   <button mat-raised-button type="submit" class="btnClose"
     (click)="save(onenote._id,title.value,description.value)">close </button>
 </div>
+
+
+
+<!-- <mat-card class="border1">
+  <form ngSubmit="submit">
+    <div>
+      <textarea matInput placeholder="Title" [(ngModel)]="onenote.title" value="{{onenote.title}}" matTextareaAutosize
+        class="input" #title></textarea>
+    </div>
+    <div>
+      <textarea matInput placeholder="Description" [(ngModel)]="onenote.description" value="{{onenote.description}}"
+        #description>
+    </textarea>
+    </div>
+    <div>
+
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          notifications_paused
+        </i>
+      </button>
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          person_add
+        </i>
+      </button>
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          color_lens
+        </i>
+      </button>
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          crop_original
+        </i>
+      </button>
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          archive
+        </i>
+      </button>
+      <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="menu">
+        <i class="material-icons">
+          more_vert
+        </i>
+      </button>
+      <mat-menu #menu="matMenu" class="menuclass">
+        <mat-list-item><button mat-button>Add label</button></mat-list-item>
+        <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
+        <mat-list-item><button mat-button>Show checkboxes</button></mat-list-item>
+      </mat-menu>
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          undo
+        </i>
+      </button>
+      <button margin="14px" mat-icon-button fxHide.xs="true">
+        <i class="material-icons">
+          redo
+        </i>
+      </button><button mat-button class="btnClose" (click)="save(onenote._id,title.value,description.value)">
+        Close</button>
+    </div>
+  </form>
+</mat-card> -->

@@ -48,7 +48,21 @@ export class NotesService {
   }
   getCollabNotes() {
     console.log('href collab');
-    
+
     return this.http.get(this.NotesUrl + 'collaboratedNotes')
+  }
+  getCollabUsers(note) {
+    console.log("KOLO",note);
+    
+    return this.http.post(this.NotesUrl + 'getCollaborators', note)
+  }
+  deleteColl(note) {
+    console.log("IFGEBY&GGVGGGGGG", note);
+    return this.http.put(this.NotesUrl + 'deleteCollaborator', note)
+  }
+  collabUser(note) {
+    console.log("COLlabUser", note);
+
+    return this.http.post(this.NotesUrl + 'collaborate', note)
   }
 }
