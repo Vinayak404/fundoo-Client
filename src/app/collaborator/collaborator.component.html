@@ -16,19 +16,21 @@
   </div>
   <div style="width: 82%" *ngFor="let item of people">
     <div fxLayout="row" fxLayoutAlign="start center">
-      <!-- <div>
-        <button mat-mini-fab> {{ item._id.firstName| slice:0:1}}</button>
-      </div> -->
+      <span>
+        <div>
+          <button mat-mini-fab> {{ item._id.firstName| slice:0:1}}</button>
+        </div>
+      </span>
       <div>
-        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap=6px style=" width: 300px;">
+        <div fxLayout="row" fxLayoutAlign="start start" style=" width: 300px;">
           <div>{{item._id.firstName}}</div>
           <div>{{item._id.lastName}}</div>
         </div>
         <div style="width: 75%;">{{item._id.email}}</div>
       </div>
-      <div><button mat-icon-button>
+      <span><button mat-icon-button>
           <mat-icon (click)="removeColab(item._id.email)">clear</mat-icon>
-        </button></div>
+        </button></span>
     </div>
   </div>
 

@@ -50,4 +50,5 @@ node_modules
 package-lock.json
 README.node_modules
 README.md
-./src/environments
+environments
+app/environments

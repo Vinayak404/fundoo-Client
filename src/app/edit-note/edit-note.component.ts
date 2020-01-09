@@ -7,8 +7,6 @@ import { NotesService } from '../services/notes.service';
   styleUrls: ['./edit-note.component.scss']
 })
 export class EditNoteComponent implements OnInit {
-
-
   title: any = "";
   description: any = "";
   onenote: any;
@@ -27,11 +25,9 @@ export class EditNoteComponent implements OnInit {
     console.log(editData, "after editing");
     this.noteservice.updateNote(editData).subscribe(res => {
       console.log("RES edit update--->", res);
-
       this.closeDialog();
     })
   }
-
   closeDialog() {
     this.dialog.closeAll();
   }
