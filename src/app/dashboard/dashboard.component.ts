@@ -13,12 +13,14 @@ export class DashboardComponent implements OnInit {
   note: any;
   archiveNotes: any;
   TrashNotes: any;
+  upload: boolean = false;
 
   constructor(private router: Router, private userService: UserServicesService,
     private snackBar: MatSnackBar, private notesService: NotesService) { }
   pic = localStorage.getItem('profilePic');
   user = JSON.parse(localStorage.getItem('user'));
   Notes: any;
+  file: any;
   @Input() options
   ngOnInit() {
     console.log(this.user);
@@ -39,6 +41,21 @@ export class DashboardComponent implements OnInit {
   }
   getTrash() {
     this.router.navigate(['/dashBoard/trashNotes'])
+  }
+  imgUp() {
+    this.upload = !this.upload
+  }
+  fileChanged(event) {
+    this.file = event.target.files[0]
+    console.log(this.file);
+    const filedata = new FormData();
+    filedata.append('image', this.file)
+    this.userService.profilepic(filedata).subscribe((res: any) => {
+      console.log(res);
+      localStorage.removeItem('profilePic')
+      localStorage.setItem('profilePic', res.imageurl)
+      this.pic = localStorage.getItem('profilePic')
+    })
   }
 
 }

@@ -27,4 +27,7 @@ export class UserServicesService {
   logout() {
     return this.http.post(`${this.UserUrl}login`, {})
   }
+  profilepic(image) {
+    return this.http.post(`${this.UserUrl}uploadpic`, image)
+  }
 }

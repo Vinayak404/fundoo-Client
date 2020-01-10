@@ -25,9 +25,12 @@ import {
   MatOptionModule,
   MatSelectModule,
   MatMenu,
+  DateAdapter,
   MatMenuModule,
   MatTooltipModule,
   MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
@@ -43,6 +46,7 @@ import { ArchivesComponent } from './archives/archives.component';
 import { TrashComponent } from './trash/trash.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +66,7 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
     CollaboratorComponent
   ],
   imports: [
-    MatSnackBarModule, MatSidenavModule,
+    MatSnackBarModule, MatSidenavModule, MatDatepickerModule,
     AppRoutingModule,
     MatCardModule,
     MatInputModule,
@@ -76,7 +80,7 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
     MatListModule,
     MatButtonToggleModule,
     LayoutModule, MatOptionModule, MatSelectModule, ClickOutsideModule, MatMenuModule,
-    MatDialogModule, MatTooltipModule
+    MatDialogModule, MatTooltipModule, MatNativeDateModule, FormsModule
   ],
   entryComponents: [
     EditNoteComponent, CollaboratorComponent

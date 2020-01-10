@@ -1,9 +1,18 @@
 <div>
-  <button margin="14px" mat-icon-button fxHide.xs="true">
+  <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="calender">
     <i class="material-icons">
       notifications_paused
     </i>
   </button>
+
+  <mat-menu #calender>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <input type="time">
+    
+  </mat-menu>
+
   <button margin="14px" mat-icon-button fxHide.xs="true" (click)="CollabDialog()">
     <i class="material-icons">
       person_add
@@ -21,17 +30,19 @@
   </button>
 
   <mat-menu #colorlist="matMenu" [overlapTrigger]="false">
-    <ng-template matMenuContent class="matmenucontent">
-      <div>
-        <div fxLayout="row" fxLayoutGap="1px" style="margin-top: 1px" *ngFor="let colors of arrayOfColors">
-          <div *ngFor="let color of colors">
+    <form (keydown.tab)="$event.stopPropagation()">
+      <ng-template matMenuContent class="matmenucontent">
+        <div>
+          <div fxLayout="row" fxLayoutGap="1px" style="margin-top: 1px" *ngFor="let colors of arrayOfColors">
+            <div *ngFor="let color of colors">
               <button [ngStyle]="{ 'background-color': color.color }" (click)="setColor(noteId._id,(color.color))"
                 matTooltip="{{ color.name }}" mat-mini-fab></button>
 
+            </div>
           </div>
         </div>
-      </div>
-    </ng-template>
+      </ng-template>
+    </form>
   </mat-menu>
   <button margin="14px" mat-icon-button fxHide.xs="true">
     <i class="material-icons">

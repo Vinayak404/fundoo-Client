@@ -35,4 +35,17 @@ export class TrashComponent implements OnInit {
       console.log(error);
     })
   }
+  unTrash(id) {
+    let delId = { id: id }
+    console.log(delId);
+
+    this.notesServices.unTrashNote(delId).subscribe((res: any) => {
+      console.log('untrashed', res);
+      this.getTrash()
+    }, error => {
+      this.snackBar.open("untrash failed", "ok", { duration: 5000 })
+      console.log(error);
+
+    })
+  }
 }

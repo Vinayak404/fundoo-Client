@@ -36,9 +36,14 @@ export class NotesService {
   unarchive(id) {
     return this.http.put(this.NotesUrl + 'unArchive', id)
   }
+  unTrashNote(id) {
+    console.log("untradh id", id);
+
+    return this.http.put(this.NotesUrl + 'unTrash', id)
+  }
   deleteNoteForever(Nid) {
     console.log("HEREjfjf", Nid);
-    return this.http.delete(this.NotesUrl + 'deleteNoteForever', Nid)
+    return this.http.put(this.NotesUrl + 'deleteNoteForever', Nid)
   }
   color(ids) {
     return this.http.put(this.NotesUrl + 'color', ids)
@@ -52,8 +57,8 @@ export class NotesService {
     return this.http.get(this.NotesUrl + 'collaboratedNotes')
   }
   getCollabUsers(note) {
-    console.log("KOLO",note);
-    
+    console.log("KOLO", note);
+
     return this.http.post(this.NotesUrl + 'getCollaborators', note)
   }
   deleteColl(note) {

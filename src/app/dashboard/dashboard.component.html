@@ -39,9 +39,10 @@
       <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center">
         <mat-card style="overflow: hidden">
           <div class="image-container" style="padding-top: 50%;">
-            <img class="topic-avatar" mat-card-avatar src={{pic}}>
+            <img class="topic-avatar" mat-card-avatar src={{pic}} (click)=imgUp()>
 
           </div>
+          <input *ngIf="upload" type="file" (change)="fileChanged($event)">
           <div class="name">{{user.firstName+' '+user.lastName}}</div>
           <div class="email">{{user.email}}</div>
         </mat-card>

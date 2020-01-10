@@ -14,6 +14,7 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 export class IconComponent implements OnInit {
   @Input() noteId;
   @Output() archiveEvent = new EventEmitter
+  time: any;
   constructor(private dialog: MatDialog, private noteService: NotesService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
