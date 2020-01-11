@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment'
+import { Subject, BehaviorSubject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +68,7 @@ export class NotesService {
   }
   collabUser(note) {
     console.log("COLlabUser", note);
-
     return this.http.post(this.NotesUrl + 'collaborate', note)
   }
+
 }

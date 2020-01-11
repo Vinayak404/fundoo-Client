@@ -14,7 +14,6 @@ export class NoteCardComponent implements OnInit {
   constructor(private dialogue: MatDialog) { }
 
   ngOnInit() {
-
   }
   afterArchive($event) {
     this.archiveEvent.emit($event)
@@ -23,5 +22,4 @@ export class NoteCardComponent implements OnInit {
     console.log(note);
     this.dialogue.open(EditNoteComponent, { data: { note } })
   }
-
 }

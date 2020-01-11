@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./archives.component.scss']
 })
 export class ArchivesComponent implements OnInit {
-  archiveNotes;
+  archiveNotes: any;
   constructor(private notesService: NotesService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
@@ -28,7 +28,14 @@ export class ArchivesComponent implements OnInit {
 
     this.notesService.unarchive(nid).subscribe((res: any) => {
       console.log(res.data);
-      this.getarchives()
+
+      for (let i in this.archiveNotes) {
+        if (this.archiveNotes[i]._id == id) {
+          console.log("ARCHived", id);
+
+          this.archiveNotes.splice(i, 1)
+        }
+      }
     }, error => {
       this.snackBar.open("Unarchive failed", "ok", { duration: 5000 });
     })
@@ -38,7 +45,13 @@ export class ArchivesComponent implements OnInit {
     let colornote = { id: note, color: color }
     this.notesService.color(colornote).subscribe((res: any) => {
       console.log('success color', res);
-      this.getarchives()
+      for (let i in this.archiveNotes) {
+        if (this.archiveNotes[i]._id == note) {
+          console.log("ARCHived", note);
+
+          this.archiveNotes.splice(i, 1)
+        }
+      }
     }, error => {
       this.snackBar.open('faild color', 'ok', { duration: 5000 })
       console.log(error);

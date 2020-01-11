@@ -26,7 +26,7 @@ export class IconComponent implements OnInit {
     this.noteService.archiveNote(note).subscribe((res: any) => {
       console.log('success in archuiving', res);
 
-      this.archiveEvent.emit('true')
+      this.archiveEvent.emit(noteId)
     }, error => {
       this.snackBar.open('faild to archive', 'ok', { duration: 5000 })
       console.log(error);
@@ -84,8 +84,5 @@ export class IconComponent implements OnInit {
       { color: "rgb(209, 116, 116)", name: "pink" }
     ]
   ]
-
-
-
 }
 

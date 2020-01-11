@@ -16,11 +16,9 @@
   </div>
   <div style="width: 82%" *ngFor="let item of people">
     <div fxLayout="row" fxLayoutAlign="start center">
-      <span>
         <div>
           <button mat-mini-fab> {{ item._id.firstName| slice:0:1}}</button>
         </div>
-      </span>
       <div>
         <div fxLayout="row" fxLayoutAlign="start start" style=" width: 300px;">
           <div>{{item._id.firstName}}</div>
@@ -40,13 +38,12 @@
     </div>
     <div><input class="input" matInput placeholder="enter the email to collaborate" [formControl]="collabMail" required>
     </div>
-    <div>
+    <div> 
       <button mat-icon-button (click)="collabEmail()">
         <mat-icon>done</mat-icon>
       </button>
     </div>
   </div>
-
   <div class="colab" fxLayout="row" fxLayoutAlign="end center">
     <button mat-button mat-dialog-close>Cancel</button>
   </div>

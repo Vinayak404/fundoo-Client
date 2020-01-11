@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { NotesService } from '../services/notes.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-main',
@@ -9,15 +10,30 @@ import { NotesService } from '../services/notes.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private snackBar: MatSnackBar, private notesService: NotesService) { }
+  constructor(private dataService: DataService, private snackBar: MatSnackBar, private notesService: NotesService) { }
 
   allNotes: any;
 
   ngOnInit() {
+    this.getEditNotes();
     this.getNotes();
     this.getCollabNotes();
   }
+  getEditNotes() {
+    this.dataService.editedData.subscribe((data: any) => {
+      console.log("EDIRTES", data);
 
+      for (let i in this.allNotes) {
+        if (this.allNotes[i]._id == data._id) {
+          console.log("SPLIUCEDSFFFF", data);
+
+          this.allNotes.splice(i, 1)
+          this.allNotes[i] = data
+        }
+      }
+
+    })
+  }
   getNotes() {
     this.notesService.getAllNotes().subscribe((res: any) => {
       console.log(res.data);
@@ -48,14 +64,12 @@ export class MainComponent implements OnInit {
     }, error => {
       console.log('Error in retreiving collab notes', error);
 
-
     })
 
   }
 
   receivednote($note) {
-    // this.allNotes.push($note)
-    this.getNotes()
+    this.allNotes.push($note)
+    // this.getNotes()
   }
-
 }

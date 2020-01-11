@@ -1,48 +1,93 @@
 .input {
-    width: 88%;
-    font-size: 16px;
-    background-color: transparent;
-    border: 0px solid;
-    min-height: 8px;
-  
-  
-  }
-  
-  .divClass {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex start;
-    margin-left: 7%;
-    margin-top: 3%;
-    left: 50%;
-    justify-content: space-evenly;
-  }
-  
-  .mat-card {
-    background-color: white;
-  
-    /* left: 30%; */
-    border-radius: 8px;
-    box-shadow: 1px 1px 1px 1px #cec9c9;
-    min-width: 250px;
-    margin-right: 3%;
-    max-width: 23%;
-    /* top: 20px; */
-    margin-bottom: 3%;
-  }
-  
-  .text_break {
-    word-break: break-all;
-    padding: 5px;
-  }
-  
-  .icons {
-    visibility: hidden;
-    opacity: 0;
-  }
-  
-  .mat-card:hover .icons {
-    visibility: visible;
-    opacity: 1;
-  }
-  
+  width: 88%;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0px solid;
+  min-height: 8px;
+
+
+}
+
+.divClass {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex start;
+  margin-left: 7%;
+  margin-top: 3%;
+  left: 50%;
+  justify-content: space-evenly;
+}
+
+.mat-card {
+  background-color: white;
+
+  /* left: 30%; */
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 1px #cec9c9;
+  min-width: 250px;
+  /* top: 20px; */
+}
+
+.text_break {
+  word-break: break-all;
+  padding: 5px;
+}
+
+.icons {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mat-card:hover .icons {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mat1 {
+  background-color: red;
+  height: 10px;
+}
+
+.mat2 {
+  background-color: blue;
+  min-height: 80px;
+}
+
+.border {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 1px #cec9c9;
+  height: 20px;
+  left: 30%;
+  width: 400px;
+  top: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input {
+  width: 88%;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0px solid;
+  min-height: 8px;
+
+
+}
+
+.border1 {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 1px #cec9c9;
+  width:auto;
+  top: 20px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-button {
+  width: 40px
+}

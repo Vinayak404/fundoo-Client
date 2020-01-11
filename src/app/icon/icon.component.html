@@ -37,7 +37,6 @@
             <div *ngFor="let color of colors">
               <button [ngStyle]="{ 'background-color': color.color }" (click)="setColor(noteId._id,(color.color))"
                 matTooltip="{{ color.name }}" mat-mini-fab></button>
-
             </div>
           </div>
         </div>

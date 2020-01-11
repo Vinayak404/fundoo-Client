@@ -29,7 +29,13 @@ export class TrashComponent implements OnInit {
 
     this.notesServices.deleteNoteForever(delId).subscribe((res: any) => {
       console.log("deletESucesS", res);
-      this.getTrash()
+      for (let i in this.trashNotes) {
+        if (this.trashNotes[i]._id == Nid) {
+          console.log("ARCHived", Nid);
+
+          this.trashNotes.splice(i, 1)
+        }
+      }
     }, error => {
       this.snackBar.open("failed todelete", "ok", { duration: 5000 })
       console.log(error);
@@ -41,7 +47,12 @@ export class TrashComponent implements OnInit {
 
     this.notesServices.unTrashNote(delId).subscribe((res: any) => {
       console.log('untrashed', res);
-      this.getTrash()
+      for (let i in this.trashNotes) {
+        if (this.trashNotes[i]._id == id) {
+          console.log("ARCHived", id);
+          this.trashNotes.splice(i, 1)
+        }
+      }
     }, error => {
       this.snackBar.open("untrash failed", "ok", { duration: 5000 })
       console.log(error);
