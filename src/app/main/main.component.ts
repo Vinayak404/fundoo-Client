@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { NotesService } from '../services/notes.service';
 import { DataService } from '../services/data.service';
@@ -9,6 +9,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+
 
   constructor(private dataService: DataService, private snackBar: MatSnackBar, private notesService: NotesService) { }
 

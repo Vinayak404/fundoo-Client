@@ -10,13 +10,13 @@
 
 .border {
   background-color: white;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
   height: 20px;
-  left: 30%;
-  width: 400px;
+  width: 40%;
   top: 20px;
-  position: relative;
+  // position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,21 +28,22 @@
   background-color: transparent;
   border: 0px solid;
   min-height: 8px;
-
+  outline: none;
 
 }
 
 .border1 {
   background-color: white;
-  left: 30%;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
-  width: 400px;
+  width: 40%;
   top: 20px;
-  position: relative;
+  // position: relative;
   align-items: center;
   justify-content: space-between;
 }
-.nav-button{
-  width:40px
+
+.nav-button {
+  width: 40px
 }

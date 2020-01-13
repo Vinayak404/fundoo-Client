@@ -1,2 +1,5 @@
-<app-notes (noteAdded)="receivednote($event)"></app-notes>
-<app-note-card [notes]="allNotes" (archiveEvent)="receivednote($event)"></app-note-card>
+<div style="position: absolute; align-items: center">
+  <app-notes (noteAdded)="receivednote($event)"></app-notes>
+  <app-note-card [notes]="allNotes" (archiveEvent)="receivednote($event)" style="top:20px; position: relative; ">
+  </app-note-card>
+</div>

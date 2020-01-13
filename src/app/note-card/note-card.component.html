@@ -11,14 +11,39 @@
   </div>
 </mat-card>
 </div> -->
+<!-- <div *ngIf="gridV" class="divClass"> -->
+<div *ngIf='!gridV' class="divClassList">
+  <mat-card class="mat-cardList" *ngFor="let note of notes" [style.backgroundColor]="note.color">
 
-<div class="divClass">
-  <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.color">
     <div (click)="dialog(note)">
       <div class="text_break">{{note.title}}
       </div>
       <div class="text_break">
         {{note.description}}</div>
+    </div>
+    <div *ngIf="note.collaboratorId">
+      <div *ngFor="let email of note.collaboratorId.collaboratorsId">
+        <label style="font-size: x-small">{{email}}</label>
+      </div>
+    </div>
+    <mat-card-actions>
+      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)"></app-icon>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div *ngIf='gridV' class="divClassList">
+  <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.color">
+
+    <div (click)="dialog(note)">
+      <div class="text_break">{{note.title}}
+      </div>
+      <div class="text_break">
+        {{note.description}}</div>
+    </div>
+    <div *ngIf="note.collaboratorId">
+      <div *ngFor="let email of note.collaboratorId.collaboratorsId">
+        <label style="font-size: x-small">{{email}}</label>
+      </div>
     </div>
     <mat-card-actions>
       <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)"></app-icon>

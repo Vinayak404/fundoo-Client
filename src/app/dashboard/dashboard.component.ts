@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserServicesService } from '../services/user-services.service';
 import { NotesService } from '../services/notes.service';
 import { MatSnackBar } from '@angular/material';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,11 +15,13 @@ export class DashboardComponent implements OnInit {
   archiveNotes: any;
   TrashNotes: any;
   upload: boolean = false;
+  gridView: boolean = true;
 
   constructor(private router: Router, private userService: UserServicesService,
-    private snackBar: MatSnackBar, private notesService: NotesService) { }
+    private snackBar: MatSnackBar, private notesService: NotesService, private dataService: DataService) { }
   pic = localStorage.getItem('profilePic');
   user = JSON.parse(localStorage.getItem('user'));
+
   Notes: any;
   file: any;
   @Input() options
@@ -44,6 +47,10 @@ export class DashboardComponent implements OnInit {
   }
   imgUp() {
     this.upload = !this.upload
+  }
+  grid() {
+    this.gridView = !this.gridView
+    this.dataService.gridList(this.gridView)
   }
   fileChanged(event) {
     this.file = event.target.files[0]

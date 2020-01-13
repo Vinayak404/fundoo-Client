@@ -44,7 +44,8 @@
 .nav-button {
   position: relative;
   width: 100%;
-  text-align: start
+  padding: 0% 0%;
+  text-align: start;
 }
 
 .searchToolBar {
@@ -70,7 +71,7 @@
   background-color: white;
   padding-left: 5px;
   height: 80%;
-  width: 50%;
+  width: 30%;
   left: 15px;
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
@@ -96,6 +97,7 @@
   font-size: 16px;
   background-color: transparent;
   border: 0px solid;
+  outline: none;
 }
 
 .material-icons {
