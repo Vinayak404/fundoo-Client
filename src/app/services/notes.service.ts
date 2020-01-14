@@ -50,6 +50,7 @@ export class NotesService {
     return this.http.put(this.NotesUrl + 'color', ids)
   }
   updateNote(det) {
+    console.log("GGG",det);
     return this.http.put(this.NotesUrl + 'editNote', det)
   }
   getCollabNotes() {

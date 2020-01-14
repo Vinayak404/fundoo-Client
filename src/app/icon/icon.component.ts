@@ -13,7 +13,7 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 export class IconComponent implements OnInit {
   @Input() noteId;
-  @Output() archiveEvent = new EventEmitter
+  @Output() archiveEvent = new EventEmitter; @Output() colorF = new EventEmitter; @Output() deleteEv = new EventEmitter
   time: any;
   constructor(private dialog: MatDialog, private noteService: NotesService, private snackBar: MatSnackBar) { }
 
@@ -25,8 +25,7 @@ export class IconComponent implements OnInit {
     console.log(noteId._id);
     this.noteService.archiveNote(note).subscribe((res: any) => {
       console.log('success in archuiving', res);
-
-      this.archiveEvent.emit(noteId)
+      this.archiveEvent.emit(res.data)
     }, error => {
       this.snackBar.open('faild to archive', 'ok', { duration: 5000 })
       console.log(error);
@@ -39,8 +38,7 @@ export class IconComponent implements OnInit {
     console.log(noteId._id);
     this.noteService.deleteNote(note).subscribe((res: any) => {
       console.log('success in delete', res);
-
-      this.archiveEvent.emit('true')
+      this.deleteEv.emit(res.data)
     }, error => {
       this.snackBar.open('faild to delete', 'ok', { duration: 5000 })
       console.log(error);
@@ -51,8 +49,7 @@ export class IconComponent implements OnInit {
     let colornote = { id: note, color: color }
     this.noteService.color(colornote).subscribe((res: any) => {
       console.log('success color', res);
-
-      this.archiveEvent.emit(colornote)
+      this.colorF.emit(res)
     }, error => {
       this.snackBar.open('faild color', 'ok', { duration: 5000 })
       console.log(error);

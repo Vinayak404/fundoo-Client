@@ -1,6 +1,6 @@
 <mat-toolbar class="toolbar">
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
+    <button type="button" mat-icon-button (click)="drawer.toggle()">
       <mat-icon matSuffix>menu</mat-icon>
     </button>
   </div>
@@ -20,7 +20,7 @@
       <mat-icon>close</mat-icon>
     </button>
   </div>
-  <span><button margin="14px" mat-icon-button fxHide.xs="true" (click)="ngOnInit()">
+  <span><button margin="14px" mat-icon-button fxHide.xs="true" (click)="refresh()">
       <i class="material-icons">
         refresh
       </i>

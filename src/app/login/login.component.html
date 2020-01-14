@@ -1,22 +1,21 @@
-
 <mat-card>
   <mat-card-title>FUNDOO</mat-card-title>
-  <b class=title>Login</b>
+  <b class=title><b>Login</b></b>
   <mat-card-content>
     <form ngSubmit="submit">
       <div>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <input matInput placeholder="email" type="text" name="email" [formControl]="email" required>
           <mat-icon matSuffix>local_post_office</mat-icon>
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
           <input matInput placeholder="Password" type="password" name="password" [formControl]="password" required>
           <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
       </div>
-      <button class="button" type="submit" (click)="login()" mat-button>Login</button>
+      <div><button class="button" type="submit" (click)="login()" mat-button>Login</button></div>
       <p><a routerLink="/register">New user? Sign-in here</a></p>
       <p><a routerLink="/forgotPassword">forgot password?</a></p>
     </form>

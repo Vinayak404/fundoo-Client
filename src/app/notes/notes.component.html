@@ -1,16 +1,17 @@
 <mat-card *ngIf='!card' class="border">
   <input placeholder="Take a note..." class="input" (click)="cardSwap1()">
-  <div style="padding: 0px 0px"><button style="padding: 0px 0px" mat-button class="nav-button">
+  <div style="padding: 0px 0px">
+    <button mat-icon-button class="nav-button">
       <i class="material-icons">
         check_box
       </i></button>
   </div>
-  <div><button mat-button class="nav-button">
+  <div><button mat-icon-button class="nav-button">
       <i class="material-icons">
         brush
       </i></button>
   </div>
-  <div><button mat-button class="nav-button"><i class="material-icons">
+  <div><button mat-icon-button class="nav-button"><i class="material-icons">
         image
       </i></button>
   </div>

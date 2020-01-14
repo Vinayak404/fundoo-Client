@@ -14,7 +14,8 @@
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
   height: 20px;
-  width: 40%;
+  min-width: 60%;
+  max-width: 80%;
   top: 20px;
   // position: relative;
   display: flex;
@@ -45,5 +46,6 @@
 }
 
 .nav-button {
-  width: 40px
+  width: 20px;
+  padding: 0px 0px;
 }

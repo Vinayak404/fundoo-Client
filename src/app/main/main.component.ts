@@ -70,7 +70,29 @@ export class MainComponent implements OnInit {
   }
 
   receivednote($note) {
-    this.allNotes.push($note)
+    this.allNotes.push($note)`
+    `
     // this.getNotes()
+  }
+  receivedcolor($color) {
+    console.log("SPFF", $color.data);
+    for (let i in this.allNotes) {
+      if (this.allNotes[i]._id == $color.data._id) {
+        console.log("SPFF", $color.data._id);
+        this.allNotes.splice(i, 1)
+        this.allNotes[i] = $color.data
+
+      }
+    }
+    this.getNotes()
+  }
+  receivedArch($event) {
+    console.log("ARCHived", $event._id);
+    for (let i in this.allNotes) {
+      if (this.allNotes[i]._id == $event._id) {
+        console.log("ARCHived", $event._id);
+        this.allNotes.splice(i, 1)
+      }
+    }
   }
 }

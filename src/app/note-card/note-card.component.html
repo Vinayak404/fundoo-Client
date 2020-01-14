@@ -27,7 +27,7 @@
       </div>
     </div>
     <mat-card-actions>
-      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)"></app-icon>
+      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)" (colorF)="coloring($event)"></app-icon>
     </mat-card-actions>
   </mat-card>
 </div>
@@ -46,7 +46,7 @@
       </div>
     </div>
     <mat-card-actions>
-      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)"></app-icon>
+      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)" (colorF)="colored($event)" (deleteEv)="deleted($event)"></app-icon>
     </mat-card-actions>
   </mat-card>
 </div>

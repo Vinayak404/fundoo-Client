@@ -12,7 +12,7 @@ export class NoteCardComponent implements OnInit {
   noteType;
   gridV;
   @Input() notes: any; NoteStatus: any; options: any;
-  @Output() archiveEvent = new EventEmitter
+  @Output() archiveE = new EventEmitter; @Output() archiveCol = new EventEmitter; @Output() deleteEVent = new EventEmitter;
   constructor(private dialogue: MatDialog, private dataService: DataService) { }
 
   ngOnInit() {
@@ -23,10 +23,16 @@ export class NoteCardComponent implements OnInit {
   }
 
   afterArchive($event) {
-    this.archiveEvent.emit($event)
+    this.archiveE.emit($event)
   }
   dialog(note) {
     console.log(note);
     this.dialogue.open(EditNoteComponent, { data: { note } })
+  }
+  colored($event) {
+    this.archiveCol.emit($event)
+  }
+  deleted($event) {
+    this.deleteEVent.emit($event)
   }
 }

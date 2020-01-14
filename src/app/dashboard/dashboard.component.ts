@@ -26,10 +26,10 @@ export class DashboardComponent implements OnInit {
   file: any;
   @Input() options
   ngOnInit() {
-    console.log(this.user);
-
   }
-
+  refresh() {
+    window.location.reload()
+  }
   logout() {
     this.userService.logout();
     localStorage.clear();
