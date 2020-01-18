@@ -57,13 +57,13 @@ export class DashboardComponent implements OnInit {
     console.log(this.file);
     const filedata = new FormData();
     filedata.append('image', this.file)
+    console.log("fiLEdA",filedata);
     this.userService.profilepic(filedata).subscribe((res: any) => {
       console.log(res);
-      localStorage.removeItem('profilePic')
-      localStorage.setItem('profilePic', res.imageurl)
-      this.pic = localStorage.getItem('profilePic')
+      localStorage.removeItem('profilePic');
+      localStorage.setItem('profilePic', res.imageurl);
+      this.pic = localStorage.getItem('profilePic');
     })
   }
-
 }
 

@@ -50,7 +50,7 @@ export class NotesService {
     return this.http.put(this.NotesUrl + 'color', ids)
   }
   updateNote(det) {
-    console.log("GGG",det);
+    console.log("GGG", det);
     return this.http.put(this.NotesUrl + 'editNote', det)
   }
   getCollabNotes() {
@@ -70,6 +70,14 @@ export class NotesService {
   collabUser(note) {
     console.log("COLlabUser", note);
     return this.http.post(this.NotesUrl + 'collaborate', note)
+  }
+  Reminder(time) {
+    return this.http.post(this.NotesUrl + 'addReminder', time)
+  }
+  noteImageUpload(file) {
+    console.log("FILE", file);
+
+    return this.http.post(this.NotesUrl + 'noteImageUpload', file)
   }
 
 }

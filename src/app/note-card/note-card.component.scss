@@ -10,7 +10,7 @@
 
 .divClass {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column row wrap;
   align-items: flex start;
   margin-left: 7%;
   margin-top: 3%;
@@ -20,7 +20,7 @@
 
 .mat-card {
   background-color: white;
-
+  height: fit-content;
   /* left: 30%; */
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
@@ -34,6 +34,7 @@
 .mat-cardList {
   background-color: white;
 
+  height: fit-content;
   /* left: 30%; */
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;

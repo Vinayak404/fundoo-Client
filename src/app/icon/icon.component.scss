@@ -12,10 +12,15 @@
   justify-content: space-around;
 }
 
+.imgBtn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
 .matt {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
 }
-

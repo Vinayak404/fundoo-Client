@@ -1,6 +1,8 @@
 <div class="divClass">
   <mat-card class="mat-card" *ngFor="let note of archiveNotes" [style.backgroundColor]="note.color">
-    <div class="text_break">{{note.title}}
+      <div *ngIf="note.image">
+          <img src="{{note.image}}" width="100%">
+        </div><div class="text_break">{{note.title}}
     </div>
     <div class="text_break">
       {{note.description}}</div>

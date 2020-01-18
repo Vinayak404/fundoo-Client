@@ -46,6 +46,7 @@ import { ArchivesComponent } from './archives/archives.component';
 import { TrashComponent } from './trash/trash.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
+import { AmazingTimePickerModule } from 'amazing-time-picker';
 
 
 @NgModule({
@@ -80,7 +81,7 @@ import { CollaboratorComponent } from './collaborator/collaborator.component';
     MatListModule,
     MatButtonToggleModule,
     LayoutModule, MatOptionModule, MatSelectModule, ClickOutsideModule, MatMenuModule,
-    MatDialogModule, MatTooltipModule, MatNativeDateModule, FormsModule
+    MatDialogModule, MatTooltipModule, MatNativeDateModule, FormsModule,AmazingTimePickerModule
   ],
   entryComponents: [
     EditNoteComponent, CollaboratorComponent

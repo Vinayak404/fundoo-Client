@@ -2,19 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { NotesService } from '../services/notes.service';
 import { DataService } from '../services/data.service';
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-
   constructor(private dataService: DataService, private snackBar: MatSnackBar, private notesService: NotesService) { }
-
   allNotes: any;
-
   ngOnInit() {
     this.getEditNotes();
     this.getNotes();
@@ -32,7 +27,6 @@ export class MainComponent implements OnInit {
           this.allNotes[i] = data
         }
       }
-
     })
   }
   getNotes() {
@@ -41,7 +35,6 @@ export class MainComponent implements OnInit {
       this.allNotes = res.data;
     }, error => {
       this.snackBar.open("register failed", "ok", { duration: 5000 });
-
     })
   }
   getCollabNotes() {
@@ -64,14 +57,11 @@ export class MainComponent implements OnInit {
       });
     }, error => {
       console.log('Error in retreiving collab notes', error);
-
     })
-
   }
-
   receivednote($note) {
-    this.allNotes.push($note)`
-    `
+    this.allNotes.push($note)
+
     // this.getNotes()
   }
   receivedcolor($color) {

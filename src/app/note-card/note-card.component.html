@@ -16,6 +16,9 @@
   <mat-card class="mat-cardList" *ngFor="let note of notes" [style.backgroundColor]="note.color">
 
     <div (click)="dialog(note)">
+      <div *ngIf="note.image">
+        <img src="{{note.image}}" width="100%">
+      </div>
       <div class="text_break">{{note.title}}
       </div>
       <div class="text_break">
@@ -27,7 +30,8 @@
       </div>
     </div>
     <mat-card-actions>
-      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)" (colorF)="coloring($event)"></app-icon>
+      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)" (colorF)="colored($event)">
+      </app-icon>
     </mat-card-actions>
   </mat-card>
 </div>
@@ -35,8 +39,12 @@
   <mat-card class="mat-card" *ngFor="let note of notes" [style.backgroundColor]="note.color">
 
     <div (click)="dialog(note)">
+      <div *ngIf="note.image">
+        <img src="{{note.image}}" width="100%">
+      </div>
       <div class="text_break">{{note.title}}
       </div>
+
       <div class="text_break">
         {{note.description}}</div>
     </div>
@@ -46,7 +54,8 @@
       </div>
     </div>
     <mat-card-actions>
-      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)" (colorF)="colored($event)" (deleteEv)="deleted($event)"></app-icon>
+      <app-icon class="icons" [noteId]="note" (archiveEvent)="afterArchive($event)" (colorF)="colored($event)"
+        (deleteEv)="deleted($event)"></app-icon>
     </mat-card-actions>
   </mat-card>
 </div>

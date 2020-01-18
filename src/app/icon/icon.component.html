@@ -1,5 +1,6 @@
 <div>
-  <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="calender">
+  <button margin="14px" mat-icon-button fxHide.xs="true" [matMenuTriggerFor]="calender"
+    (click)="timePicker(noteId._id)">
     <i class="material-icons">
       notifications_paused
     </i>
@@ -43,7 +44,8 @@
       </ng-template>
     </form>
   </mat-menu>
-  <button margin="14px" mat-icon-button fxHide.xs="true">
+  <button type="button" margin="14px" mat-icon-button fxHide.xs="true" (click)="img.click()">
+    <input #img style="display:none" type="file" (change)="noteImage($event)">
     <i class="material-icons">
       crop_original
     </i>

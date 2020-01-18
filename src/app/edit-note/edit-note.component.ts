@@ -34,7 +34,7 @@ export class EditNoteComponent implements OnInit {
     this.noteservice.updateNote(this.editData).subscribe(res => {
       console.log("RES edit update--->", res);
       this.closeDialog();
-      this.dataService.sendData(this.editData)
+      this.dataService.sendData(res);
     })
   }
   closeDialog() {
