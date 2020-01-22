@@ -14,8 +14,9 @@
   border-radius: 8px;
   box-shadow: 1px 1px 1px 1px #cec9c9;
   height: 20px;
-  min-width: 60%;
-  max-width: 80%;
+  // min-width: 60%;
+  // max-width: 80%;
+  width:400px;
   top: 20px;
   // position: relative;
   display: flex;
@@ -24,7 +25,7 @@
 }
 
 .input {
-  width: 88%;
+  width: 80%;
   font-size: 16px;
   background-color: transparent;
   border: 0px solid;

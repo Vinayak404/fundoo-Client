@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { UserServicesService } from '../services/user-services.service';
 import { Router } from '@angular/router';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material';
+import { User } from '../models/user'
 
 @Component({
   selector: 'app-login',
@@ -17,15 +18,16 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserServicesService, private router: Router, private snackbar: MatSnackBar) { }
   ngOnInit() {
   }
-
+  model = new User()
 
   login() {
-    let user = {
-      "email": this.email.value, "password": this.password.value
-    }
-    console.log(user);
 
-    this.userService.login(user).subscribe((res: any) => {
+    // let user = {
+    //   "email": this.email.value, "password": this.password.value
+    // }
+    console.log('KKKKKK', this.model);
+
+    this.userService.login(this.model).subscribe((res: any) => {
       console.log("HEre in Result", res);
       localStorage.setItem('token', res.token.token)
       localStorage.setItem('profilePic', res.user.imageURL)

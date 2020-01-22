@@ -47,14 +47,16 @@ export class MainComponent implements OnInit {
       //     CollNotes.push(e)
       //   }
       // })
-      res.data.forEach(element => {
+      if (res.data) {
+        res.data.forEach(element => {
 
-        console.log("NOteID", element.noteId);
+          console.log("NOteID", element.noteId);
 
-        this.allNotes.push(element.noteId);
-        console.log("All NOtes Noe", this.allNotes);
+          this.allNotes.push(element.noteId);
+          console.log("All NOtes Noe", this.allNotes);
 
-      });
+        });
+      }
     }, error => {
       console.log('Error in retreiving collab notes', error);
     })
