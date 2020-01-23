@@ -56,7 +56,6 @@ export class TrashComponent implements OnInit {
     }, error => {
       this.snackBar.open("untrash failed", "ok", { duration: 5000 })
       console.log(error);
-
     })
   }
 }
