@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment'
   providedIn: 'root'
 })
 export class UserServicesService {
-  UserUrl = environment.UserUrl;
+  UserUrl = "http://localhost:5000/user/";
 
   constructor(private http: HttpClient) { }
   login(user) {

@@ -1,8 +1,9 @@
 <div class="divClass">
   <mat-card class="mat-card" *ngFor="let note of archiveNotes" [style.backgroundColor]="note.color">
-      <div *ngIf="note.image">
-          <img src="{{note.image}}" width="100%">
-        </div><div class="text_break">{{note.title}}
+    <div *ngIf="note.image">
+      <img src="{{note.image}}" width="100%">
+    </div>
+    <div class="text_break">{{note.title}}
     </div>
     <div class="text_break">
       {{note.description}}</div>
@@ -54,7 +55,7 @@
         </button>
       </div>
       <mat-menu #menu="matMenu" class="menuclass">
-        <mat-list-item><button mat-button (click)="delete(noteId)">Delete note</button></mat-list-item>
+        <mat-list-item><button mat-button>Delete note</button></mat-list-item>
         <mat-list-item><button mat-button>Add label</button></mat-list-item>
         <mat-list-item><button mat-button>Add drawing</button></mat-list-item>
         <mat-list-item><button mat-button>Make a copy</button></mat-list-item>

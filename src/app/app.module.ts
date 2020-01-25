@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { NGXLogger, LoggerModule, NgxLoggerLevel } from 'ngx-logger'
 
 import {
   MatCardModule,
@@ -47,6 +48,7 @@ import { TrashComponent } from './trash/trash.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { CollaboratorComponent } from './collaborator/collaborator.component';
 import { AmazingTimePickerModule } from 'amazing-time-picker';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -81,7 +83,10 @@ import { AmazingTimePickerModule } from 'amazing-time-picker';
     MatListModule,
     MatButtonToggleModule,
     LayoutModule, MatOptionModule, MatSelectModule, ClickOutsideModule, MatMenuModule,
-    MatDialogModule, MatTooltipModule, MatNativeDateModule, FormsModule,AmazingTimePickerModule
+    MatDialogModule, MatTooltipModule, LoggerModule.forRoot({
+      level: !environment.production ? NgxLoggerLevel.LOG : NgxLoggerLevel.OFF,
+      serverLogLevel: NgxLoggerLevel.OFF
+    }), MatNativeDateModule, FormsModule, AmazingTimePickerModule
   ],
   entryComponents: [
     EditNoteComponent, CollaboratorComponent

@@ -2,13 +2,16 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { NotesService } from '../services/notes.service';
 import { DataService } from '../services/data.service';
+import { NGXLogger } from 'ngx-logger'
+import { environment } from '../../environments/environment'
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  constructor(private dataService: DataService, private snackBar: MatSnackBar, private notesService: NotesService) { }
+  env = environment.name
+  constructor(private dataService: DataService, private logger: NGXLogger, private snackBar: MatSnackBar, private notesService: NotesService) { }
   allNotes: any;
   ngOnInit() {
     this.getEditNotes();
@@ -31,7 +34,7 @@ export class MainComponent implements OnInit {
   }
   getNotes() {
     this.notesService.getAllNotes().subscribe((res: any) => {
-      console.log(res.data);
+      this.logger.log("HTHTHTHTHTHTHTHTHTHTHTHTHTHT", res.data);
       this.allNotes = res.data;
     }, error => {
       this.snackBar.open("register failed", "ok", { duration: 5000 });
@@ -70,7 +73,7 @@ export class MainComponent implements OnInit {
     console.log("SPFF", $color.data);
     for (let i in this.allNotes) {
       if (this.allNotes[i]._id == $color.data._id) {
-        console.log("SPFF", $color.data._id);
+        console.log("SPFFssssssssssssssssssssss", $color.data._id);
         this.allNotes.splice(i, 1)
         this.allNotes[i] = $color.data
 

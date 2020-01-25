@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   TrashNotes: any;
   upload: boolean = false;
   gridView: boolean = true;
-
+  search: any;
   constructor(private router: Router, private userService: UserServicesService,
     private snackBar: MatSnackBar, private notesService: NotesService, private dataService: DataService) { }
   pic = localStorage.getItem('profilePic');
